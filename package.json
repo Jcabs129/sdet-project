@@ -1,0 +1,9 @@
+{
+  "name": "sdet-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/k6": "^1.0.2"
+  }
+}
