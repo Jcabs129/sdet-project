@@ -27,8 +27,12 @@ export class InventoryPage {
     return this.page.getByTestId('shopping-cart-badge');
   }
 
-  async addItemToCart(itemName: string) {
-    await this.inventoryItem.filter({ hasText: itemName }).click();
+  get removeFromCartBtn () {
+    return this.page.getByRole('button').getByText('Remove');
+  }
+
+  async addItemToCart(title: string): Promise<void> {
+    await this.inventoryItem.filter({ hasText: title }).click();
     await this.addCartButton.filter({ hasText: 'Add to cart' }).click();
     await expect(this.shoppingCartBadge).toBeVisible();
   }

@@ -10,7 +10,7 @@ export class LoginPage {
     return this.page.getByTestId('password').fill('secret_sauce')
   }
 
-  async navigateToLogin() {
+  async navigateToLogin(): Promise<void> {
     await this.page.goto('https://www.saucedemo.com/')
     await this.usernameField
     await this.passwordField
