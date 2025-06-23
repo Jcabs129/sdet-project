@@ -7,3 +7,6 @@ yarn-error.log
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Authentication User file
+userSession.json

@@ -1,12 +1,7 @@
-import { test as base } from '@playwright/test';
-import { InventoryPage } from '../../pages/InventoryPage';
-import { LoginPage } from '../../pages/LoginPage';
+import { test as base, mergeTests } from '@playwright/test';
+import { test as pageObjectFixture } from './page-object-fixture.ts';
 
-export const test = base.extend<{
-  inventoryPage: InventoryPage;
-  loginPage: LoginPage;
-}>({
-  inventoryPage: async ({ page }, use) => {
-    await use(new InventoryPage(page));
-  },
-});
+const test = mergeTests(pageObjectFixture);
+const expect = base.expect;
+
+export { test, expect };
