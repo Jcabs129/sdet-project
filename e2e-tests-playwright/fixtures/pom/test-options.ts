@@ -1,5 +1,5 @@
 import { test as base, mergeTests } from '@playwright/test';
-import { test as pageObjectFixture } from './page-object-fixture';
+import { test as pageObjectFixture } from './page-object-fixture.ts';
 
 const test = mergeTests(pageObjectFixture);
 const expect = base.expect;

@@ -8,7 +8,7 @@ export class InventoryPage {
   }
 
   get addCartButton () {
-    return this.page.getByRole('button');
+    return this.page.getByRole('button', { name: 'Add to cart' });
   }
 
   get inventoryItemPrice () {
@@ -32,8 +32,8 @@ export class InventoryPage {
   }
 
   async addItemToCart(title: string): Promise<void> {
-    await this.inventoryItem.filter({ hasText: title }).click();
-    await this.addCartButton.filter({ hasText: 'Add to cart' }).click();
+    // await this.inventoryItem.getByText(title).click();
+    await this.addCartButton.click();
     await expect(this.shoppingCartBadge).toBeVisible();
   }
 

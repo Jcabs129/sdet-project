@@ -21,3 +21,5 @@ export const test = base.extend<{
     await use(new LoginPage(page));
   },
 });
+
+export { expect } from '@playwright/test';
