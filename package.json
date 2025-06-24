@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@executeautomation/playwright-mcp-server": "^1.0.6",
     "@playwright/test": "^1.53.0",
     "@types/k6": "^1.0.2",
     "@types/node": "^24.0.3"

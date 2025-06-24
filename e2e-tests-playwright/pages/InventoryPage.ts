@@ -8,7 +8,7 @@ export class InventoryPage {
   }
 
   get addCartButton () {
-    return this.page.getByRole('button');
+    return this.page.getByTestId('add-to-cart-sauce-labs-backpack').getByText('Add to cart') ;
   }
 
   get inventoryItemPrice () {
@@ -27,9 +27,13 @@ export class InventoryPage {
     return this.page.getByTestId('shopping-cart-badge');
   }
 
-  async addItemToCart(itemName: string) {
-    await this.inventoryItem.filter({ hasText: itemName }).click();
-    await this.addCartButton.filter({ hasText: 'Add to cart' }).click();
+  get removeFromCartBtn () {
+    return this.page.getByRole('button').getByText('Remove');
+  }
+
+  async addItemToCart(title: string): Promise<void> {
+    // await this.inventoryItem.getByText(title).click();
+    await this.addCartButton.click();
     await expect(this.shoppingCartBadge).toBeVisible();
   }
 

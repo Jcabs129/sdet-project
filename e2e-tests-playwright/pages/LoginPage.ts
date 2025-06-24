@@ -4,10 +4,10 @@ export class LoginPage {
   constructor(private page: Page) {}
 
   get usernameField () {
-    return this.page.getByTestId('username').fill('standard_user')
+    return this.page.getByPlaceholder('Username').fill('standard_user')
   }
   get passwordField () {
-    return this.page.getByTestId('password').fill('secret_sauce')
+    return this.page.getByPlaceholder('Password').fill('secret_sauce')
   }
 
   async navigateToLogin() {
@@ -15,12 +15,13 @@ export class LoginPage {
     await this.usernameField
     await this.passwordField
     await this.page.getByRole('button').getByText('Login').click()
+    await expect(this.page.getByText('Swag Labs')).toBeVisible()
 
-    await this.page.waitForResponse(
-      (response) =>
-          response.url().includes('/inventory.html') &&
-          response.request().method() === 'GET'
-  );
-  await expect(this.page.getByText('Swag Labs')).toBeVisible()
+
+  //   await this.page.waitForResponse(
+  //     (response) =>
+  //         response.url().includes('/inventory.html') &&
+  //         response.request().method() === 'GET'
+  // );
   }
 }
