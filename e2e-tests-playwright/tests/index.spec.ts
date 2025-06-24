@@ -1,10 +1,10 @@
-import { test, expect } from '../fixtures/pom/test-options';
+import { test } from '../fixtures/pom/test-options';
 
 
 
 test.describe('james test', () => {
     test.beforeEach(async ({ loginPage }) => {
-        await loginPage.navigateToLogin();
+        await loginPage.navigateToLogin('standard_user', 'secret_sauce');
     });
 
     test('saucelabsdemo test james', async ({ inventoryPage }) => {

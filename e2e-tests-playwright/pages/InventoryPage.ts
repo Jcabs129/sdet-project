@@ -8,6 +8,7 @@ export class InventoryPage {
   }
 
   get addCartButton () {
+    return this.page.getByTestId('add-to-cart-sauce-labs-backpack').getByText('Add to cart') ;
     return this.page.getByRole('button', { name: 'Add to cart' });
   }
 
@@ -37,4 +38,9 @@ export class InventoryPage {
     await expect(this.shoppingCartBadge).toBeVisible();
   }
 
-}
+  async removeItemFromCart(title: string): Promise<void> {
+    await this.removeFromCartBtn.click();
+    await expect(this.shoppingCartBadge).toBeHidden();
+  }
+
+  }
