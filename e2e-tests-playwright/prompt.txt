@@ -7,12 +7,11 @@ On Swag labs lets execute below the scenarios listed below.
 
 Scenario 1 - Negative Login Scenarios (via MCP-Playwright server):
 
-navigate to login page https://www.saucedemo.com/
-enter username "locked_out_user" and password "secret_sauce"
-verify that the error message is visible to the user
-verify that the user is still on the login page
-verify that the error message contains the text "Epic sadface: Sorry"
-
+1. navigate to login page https://www.saucedemo.com/
+2. enter username "locked_out_user" and password "secret_sauce"
+3. verify that the error message contains the text "Epic sadface: Sorry"
+4. verify that the error message is visible to the user
+5. verify that the user is still on the login page 
 
 ensure that when code gen is generated via MCP server, it follows the design pattern i have strutured 
 in my `sdet-project/e2e-tests-playwright` directory and the code generated is written in typescipt.

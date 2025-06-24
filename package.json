@@ -9,5 +9,8 @@
     "@types/k6": "^1.0.2",
     "@types/node": "^24.0.3"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "debug": "npx playwright test --project=chromium --debug"
+  }
 }

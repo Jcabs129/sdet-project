@@ -96,3 +96,4 @@ e2e-tests-playwright/
 - [Building Playwright Framework Step by Step (Initial Setup) - dev.to](https://dev.to/idavidov13/building-playwright-framework-step-by-step-initial-setup-3iba)
 - [AI-Driven Test Automation with Playwright MCP Server & CursorAI - Medium](https://medium.com/@sumit.somanchd/ai-driven-test-automation-with-playwright-mcp-server-cursorai-c974f2d6b191)
 - [MCP Playwright Example Project - GitHub](https://github.com/executeautomation/mcp-playwright)
+- [MCP playwright and cursor - youtube](https://www.youtube.com/watch?v=cNh3_r6UjKk&ab_channel=JoanMedia)

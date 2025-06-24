@@ -16,4 +16,8 @@ export const test = base.extend<{
   inventoryPage: async ({ page }, use) => {
     await use(new InventoryPage(page));
   },
+  
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
 });
