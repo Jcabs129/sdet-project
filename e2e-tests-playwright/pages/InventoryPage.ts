@@ -3,13 +3,12 @@ import { Page, Locator, expect} from '@playwright/test';
 export class InventoryPage {
   constructor(private page: Page) {}
 
-  get inventoryItem () {
-    return this.page.getByTestId('inventory-item-name');
+  get inventoryItemName () {
+    return this.page.getByTestId('#inventory-item-description')
   }
 
   get addCartButton () {
-    return this.page.getByTestId('add-to-cart-sauce-labs-backpack').getByText('Add to cart') ;
-    return this.page.getByRole('button', { name: 'Add to cart' });
+    return this.page.click('#add-to-cart-sauce-labs-backpack');
   }
 
   get inventoryItemPrice () {
@@ -29,16 +28,15 @@ export class InventoryPage {
   }
 
   get removeFromCartBtn () {
-    return this.page.getByRole('button').getByText('Remove');
+    return this.page.locator('#remove-sauce-labs-backpack');
   }
 
-  async addItemToCart(title: string): Promise<void> {
-    // await this.inventoryItem.getByText(title).click();
-    await this.addCartButton.click();
+  async addItemToCart(): Promise<void> {
+    await this.addCartButton
     await expect(this.shoppingCartBadge).toBeVisible();
   }
 
-  async removeItemFromCart(title: string): Promise<void> {
+  async removeItemFromCart(): Promise<void> {
     await this.removeFromCartBtn.click();
     await expect(this.shoppingCartBadge).toBeHidden();
   }

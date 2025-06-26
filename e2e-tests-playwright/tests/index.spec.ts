@@ -7,7 +7,12 @@ test.describe('james test', () => {
         await loginPage.navigateToLogin('standard_user', 'secret_sauce');
     });
 
-    test('saucelabsdemo test james', async ({ inventoryPage }) => {
-        await inventoryPage.addItemToCart('Sauce Labs Backpack');
+    test('Add item to cart', async ({ inventoryPage }) => {
+        await inventoryPage.addItemToCart();
+    });
+
+
+    test('remove item from cart', async ({ inventoryPage }) => {
+        await inventoryPage.removeItemFromCart();
     });
 });
