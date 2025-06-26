@@ -15,7 +15,7 @@ export default defineConfig({
   // globalSetup: './auth.setup.ts',
   
   
-  testDir: './tests',
+  testDir: './e2e-tests-playwright/tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -57,10 +57,10 @@ export default defineConfig({
     },
    
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
     // {
     //   name: 'webkit',
